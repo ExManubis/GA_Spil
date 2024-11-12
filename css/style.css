@@ -1,0 +1,16 @@
+/* CSS RESET */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+img {
+width: 100%;
+height: auto;
+display: block;
+}
+
+#game_background {
+  background-image: url('img/game_bg.svg');
+}
