@@ -85,7 +85,6 @@ display: block;
   width: 15%;
   aspect-ratio: 16/8;
   position: absolute;
-  top: 20%;
   left: 0%;
 }
 
@@ -190,12 +189,12 @@ display: block;
 }
 
 .fly0 {
-  animation: fly 2s linear infinite;
+  animation: fly 1.75s linear infinite;
   transform: scaleX(-1);
 }
 
 .fly1 {
-  animation: fly 2s linear infinite;
+  animation: fly 1.75s linear infinite;
   animation-direction: reverse;
   transform: scaleX(1);
 }
