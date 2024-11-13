@@ -4,13 +4,18 @@ const goodShipSprite = document.querySelector('#good_ship_sprite')
 const evilShipContainer = document.querySelector('#evil_ship_container')
 const evilShipSprite = document.querySelector('#evil_ship_sprite')
 const score = document.querySelector('#score')
-const shield = document.querySelector('#life_board')
+const shield = document.querySelector('#shield')
 const time = document.querySelector('#time')
 
 // EVENT LISTENERS
 window.addEventListener('load', showPage);
 
 // GLOBAL FUNCTIONS
+function random(maxNum) {
+  return Math.floor(Math.random() * maxNum)
+}
+
+// SHOW PAGE
 function showPage() {
   console.log('Show Page')
   startGame()
@@ -19,38 +24,67 @@ function showPage() {
   function startGame() {
     console.log('starting game..')
     let shieldVar = 100
-    let scoreVar = 0
-    score.textContent = 'Score: ' + scoreVar
+    var scoreVar = 0
+    let timeVar = 60
+    time.textContent = 'ETA: ' + timeVar
+    score.innerHTML = 'Score:<br>' + scoreVar
     shield.textContent = shieldVar + '%'
-    evilShipContainer.classList.add('fly')
-    evilShipContainer.classList.add('pos1')
-    evilShipContainer.addEventListener('click', clickEvilHandler)
+    evilShipContainer.classList.add('fly', 'pos' + random(6), 'time' + random(3))
+    evilShipContainer.addEventListener('mousedown', clickEvilHandler)
+    evilShipContainer.addEventListener('animationiteration', evilEvade)
+    goodShipContainer.classList.add('fly', 'pos' + random(6), 'time' + random(3))
+    goodShipContainer.addEventListener('mousedown', clickGoodHandler)
+    goodShipContainer.addEventListener('animationiteration', goodReset)
     
-    // EVIL SHIP 
+    // GOOD SHIP CLICK
+    function clickGoodHandler() {
+      console.log('click good') 
+      goodShipContainer.removeEventListener('mousedown', clickGoodHandler)
+      goodShipContainer.classList.add('freeze')
+      goodShipSprite.classList.add('kill')
+      scoreVar -= 500
+      score.innerHTML = 'Score:<br>' + scoreVar
+      goodShipSprite.addEventListener('animationend', goodReset)
+    }
+
+    // GOOD RESET
+    function goodReset() {
+      goodShipContainer.removeAttribute('class')
+      goodShipSprite.classList.remove('kill')
+      goodShipContainer.offsetLeft
+      goodShipContainer.classList.add('fly', 'pos' + random(6))
+      goodShipContainer.addEventListener('mousedown', clickGoodHandler)
+    }
+
+    // EVIL SHIP CLICK
     function clickEvilHandler() {
-      console.log('klik')
-      evilShipContainer.removeEventListener('click', clickEvilHandler)
+      console.log('click evil')
+      evilShipContainer.removeEventListener('mousedown', clickEvilHandler)
       evilShipContainer.classList.add('freeze')
       evilShipSprite.classList.add('kill')
+      scoreVar += 100
+      score.innerHTML = 'Score:<br>' + scoreVar
       evilShipSprite.addEventListener('animationend', evilReset)
   }
+    
+    // EVIL SHIP MISS
+    function evilEvade() {
+      scoreVar -= 100
+      score.innerHTML = 'Score:<br>' + scoreVar
+      shieldVar -= 25
+      shield.textContent = shieldVar + '%'
+      evilReset()
+    }
 
+    // EVIL RESET
     function evilReset() {
-      evilShipContainer.classList.remove('fly')
-      evilShipContainer.classList.remove('pos1')
-      evilShipContainer.classList.remove('freeze')
+      evilShipContainer.removeAttribute('class')
       evilShipSprite.classList.remove('kill')
       evilShipContainer.offsetLeft
-      evilShipContainer.classList.add('fly')
-      evilShipContainer.classList.add('pos2')
-      evilShipContainer.addEventListener('click', clickEvilHandler)
+      evilShipContainer.classList.add('fly', 'pos' + random(6))
+      evilShipContainer.addEventListener('mousedown', clickEvilHandler)
     }
 }
 
 
   }
-
-// TIME
-let timeVar = 60
-time.textContent = "Time: " + timeVar
-

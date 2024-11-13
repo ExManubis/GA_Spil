@@ -11,6 +11,11 @@ height: auto;
 display: block;
 }
 
+@font-face {
+  font-family: 'Orbitron';
+  src: url(../fonts/Orbitron-VariableFont.woff2)
+}
+
 #screen {
   width: 100%;
   aspect-ratio: 16/9;
@@ -115,12 +120,48 @@ display: block;
 
 #life_board {
   width: 2%;
-  aspect-ratio: 112/175;
   position: absolute;
   top: 89%;
   left: 4%;
+}
+
+#shield_icon {
+  aspect-ratio: 112/175;
   background-image: url('../img/shield.svg');
   background-size: cover;
+  position: relative;
+}
+
+#shield {
+  font-family: Orbitron;
+  font-size: 2rem;
+  color: orange;
+  position: absolute;
+  left: 50%;
+}
+
+#score_board {
+  top: 87.5%;
+  left: 60%;
+  position: absolute;
+  color: orange;
+  font-family: Orbitron;
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+#time_board {
+  top: 90%;
+  left: 84%;
+  position: absolute;
+  color: orange;
+  font-family: Orbitron;
+  font-size: 2rem;
+}
+
+.pos0 {
+  top: 10%;
+  left: 0;
 }
 
 .pos1 {
@@ -148,8 +189,20 @@ display: block;
   left: 0;
 }
 
+.time0 {
+  animation-duration: 1s;
+}
+
+.time1 {
+  animation-duration: 2s;
+}
+
+.time2 {
+  animation-duration: 3s;
+}
+
 .fly {
-  animation: fly 5s linear infinite;
+  animation: fly 2.5s linear infinite;
 }
 
 .kill {
@@ -172,8 +225,10 @@ display: block;
 @keyframes kill {
   from {
   opacity: 1;
+  rotate: 0deg;
 }
   to {
   opacity: 0;
+  rotate: 360deg;
 }
 }
