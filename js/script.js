@@ -85,6 +85,4 @@ function showPage() {
       evilShipContainer.addEventListener('mousedown', clickEvilHandler)
     }
 }
-
-
   }

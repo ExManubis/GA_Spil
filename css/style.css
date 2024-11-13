@@ -16,8 +16,17 @@ display: block;
   src: url(../fonts/Orbitron-VariableFont.woff2)
 }
 
+body {
+  background-color: black;
+}
+
 main {
   cursor: url('../img/cursor.png'), auto;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 #screen {
