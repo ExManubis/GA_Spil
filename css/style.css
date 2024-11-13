@@ -16,6 +16,10 @@ display: block;
   src: url(../fonts/Orbitron-VariableFont.woff2)
 }
 
+main {
+  cursor: url('../img/cursor.png'), auto;
+}
+
 #screen {
   width: 100%;
   aspect-ratio: 16/9;
