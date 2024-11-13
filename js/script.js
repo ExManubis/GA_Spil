@@ -24,15 +24,15 @@ function showPage() {
   function startGame() {
     console.log('starting game..')
     let shieldVar = 100
-    var scoreVar = 0
+    let scoreVar = 0
     let timeVar = 60
     time.textContent = 'ETA: ' + timeVar
     score.innerHTML = 'Score:<br>' + scoreVar
     shield.textContent = shieldVar + '%'
-    evilShipContainer.classList.add('fly', 'pos' + random(6), 'time' + random(3))
+    evilShipContainer.classList.add('fly' + random(2), 'pos' + random(6))
     evilShipContainer.addEventListener('mousedown', clickEvilHandler)
     evilShipContainer.addEventListener('animationiteration', evilEvade)
-    goodShipContainer.classList.add('fly', 'pos' + random(6), 'time' + random(3))
+    goodShipContainer.classList.add('fly' + random(2), 'pos' + random(6))
     goodShipContainer.addEventListener('mousedown', clickGoodHandler)
     goodShipContainer.addEventListener('animationiteration', goodReset)
     
@@ -52,7 +52,7 @@ function showPage() {
       goodShipContainer.removeAttribute('class')
       goodShipSprite.classList.remove('kill')
       goodShipContainer.offsetLeft
-      goodShipContainer.classList.add('fly', 'pos' + random(6))
+      goodShipContainer.classList.add('fly' + random(2), 'pos' + random(6))
       goodShipContainer.addEventListener('mousedown', clickGoodHandler)
     }
 
@@ -81,7 +81,7 @@ function showPage() {
       evilShipContainer.removeAttribute('class')
       evilShipSprite.classList.remove('kill')
       evilShipContainer.offsetLeft
-      evilShipContainer.classList.add('fly', 'pos' + random(6))
+      evilShipContainer.classList.add('fly' + random(2), 'pos' + random(6))
       evilShipContainer.addEventListener('mousedown', clickEvilHandler)
     }
 }

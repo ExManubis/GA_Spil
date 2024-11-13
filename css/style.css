@@ -81,28 +81,28 @@ display: block;
   pointer-events: none;
 }
 
-#good_ship_container {
-  width: 10%;
-  aspect-ratio: 4/1;
+#evil_ship_container {
+  width: 15%;
+  aspect-ratio: 16/8;
   position: absolute;
   top: 20%;
   left: 0%;
 }
 
-#good_ship_sprite {
+#evil_ship_sprite {
   width: 100%;
   height: 100%;
   background-image: url('../img/good_ship.svg');
   background-size: cover;
 }
 
-#evil_ship_container {
+#good_ship_container {
   width: 10%;
   aspect-ratio: 3/0.94;
   position: absolute;
 }
 
-#evil_ship_sprite {
+#good_ship_sprite {
   width: 100%;
   height: 100%;
   background-image: url('../img/evil_ship.svg');
@@ -189,20 +189,15 @@ display: block;
   left: 0;
 }
 
-.time0 {
-  animation-duration: 1s;
-}
-
-.time1 {
-  animation-duration: 2s;
-}
-
-.time2 {
-  animation-duration: 3s;
-}
-
-.fly {
+.fly0 {
   animation: fly 2.5s linear infinite;
+  transform: scaleX(-1);
+}
+
+.fly1 {
+  animation: fly 2.5s linear infinite;
+  animation-direction: reverse;
+  transform: scaleX(1);
 }
 
 .kill {
