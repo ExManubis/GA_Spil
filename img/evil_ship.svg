@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 76.59">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff0;
+        stroke: #ff0;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3, .cls-2 {
+        fill: #ccc;
+      }
+
+      .cls-2 {
+        stroke: #000;
+      }
+    </style>
+  </defs>
+  <ellipse class="cls-3" cx="122.5" cy="43.09" rx="122.5" ry="33.5"/>
+  <path class="cls-2" d="M187.53,38.09l-19.43-18.68c-24.41-23.46-62.39-25.32-88.97-4.34l-17.12,13.52-7.5,6.5"/>
+  <ellipse class="cls-1" cx="19" cy="40.09" rx="6.5" ry="5"/>
+  <ellipse class="cls-1" cx="37" cy="52.09" rx="6.5" ry="5"/>
+  <ellipse class="cls-1" cx="61" cy="59.09" rx="6.5" ry="5"/>
+  <ellipse class="cls-1" cx="83" cy="62.09" rx="6.5" ry="5"/>
+  <ellipse class="cls-1" cx="106" cy="64.09" rx="6.5" ry="5"/>
+  <ellipse class="cls-1" cx="129" cy="64.09" rx="6.5" ry="5"/>
+  <ellipse class="cls-1" cx="151" cy="64.09" rx="6.5" ry="5"/>
+  <ellipse class="cls-1" cx="173" cy="62.09" rx="6.5" ry="5"/>
+  <ellipse class="cls-1" cx="194" cy="57.09" rx="6.5" ry="5"/>
+  <ellipse class="cls-1" cx="215" cy="52.09" rx="6.5" ry="5"/>
+  <ellipse class="cls-1" cx="228" cy="40.09" rx="6.5" ry="5"/>
+</svg>

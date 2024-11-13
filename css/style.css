@@ -76,6 +76,36 @@ display: block;
   pointer-events: none;
 }
 
+#good_ship_container {
+  width: 10%;
+  aspect-ratio: 4/1;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+}
+
+#good_ship_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/good_ship.svg');
+  background-size: cover;
+}
+
+#evil_ship_container {
+  width: 10%;
+  aspect-ratio: 3/0.94;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+#evil_ship_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/evil_ship.svg');
+  background-size: cover;
+}
+
 #game_ui {
   width: 100%;
   height: 100%;
@@ -83,4 +113,14 @@ display: block;
   top: 0;
   left: 0;
   pointer-events: none;
+}
+
+#life_board {
+  width: 2%;
+  aspect-ratio: 112/175;
+  position: absolute;
+  top: 89%;
+  left: 4%;
+  background-image: url('../img/shield.svg');
+  background-size: cover;
 }
