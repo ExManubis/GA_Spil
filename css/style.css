@@ -82,7 +82,6 @@ display: block;
   position: absolute;
   top: 20%;
   left: 0%;
-  animation: fly 5s linear infinite;
 }
 
 #good_ship_sprite {
@@ -96,9 +95,6 @@ display: block;
   width: 10%;
   aspect-ratio: 3/0.94;
   position: absolute;
-  top: 40%;
-  left: 0%;
-  animation: fly 5s linear infinite;
 }
 
 #evil_ship_sprite {
@@ -125,6 +121,43 @@ display: block;
   left: 4%;
   background-image: url('../img/shield.svg');
   background-size: cover;
+}
+
+.pos1 {
+  top: 20%;
+  left: 0;
+}
+
+.pos2 {
+  top: 30%;
+  left: 0;
+}
+
+.pos3 {
+  top: 40%;
+  left: 0;
+}
+
+.pos4 {
+  top: 50%;
+  left: 0;
+}
+
+.pos5 {
+  top: 60%;
+  left: 0;
+}
+
+.fly {
+  animation: fly 5s linear infinite;
+}
+
+.kill {
+  animation: kill 1s linear;
+}
+
+.freeze {
+  animation-play-state: paused;
 }
 
 @keyframes fly {
