@@ -1,4 +1,6 @@
 // GLOBAL CONSTANTS
+const startScreen = document.getElementById('start')
+const startButton = document.querySelector('#start_button')
 const goodShipContainer = document.querySelector('#good_ship_container')
 const goodShipSprite = document.querySelector('#good_ship_sprite')
 const evilShipContainer = document.querySelector('#evil_ship_container')
@@ -18,11 +20,13 @@ function random(maxNum) {
 // SHOW PAGE
 function showPage() {
   console.log('Show Page')
-  startGame()
+  startScreen.style.display = 'block'
+  startButton.addEventListener('click', startGame)
   
   // GAME STARTED
   function startGame() {
     console.log('starting game..')
+    startScreen.style.display = 'none'  
     let shieldVar = 100
     let scoreVar = 0
     let timeVar = 60
