@@ -9,10 +9,11 @@ var intervalID
 function startTimer() {
   time.textContent = 'ETA: ' + timeVar
   intervalID = setInterval(() => {
-    time.textContent = 'ETA: ' + timeVar 
     timeVar -= 1
-    if (timeVar < 0) {
-      clearInterval(intervalID) 
+    time.textContent = 'ETA: ' + timeVar 
+    if (timeVar == 0) {
+      clearInterval(intervalID)
+      endGame()
     }
     }, 1000);
 }

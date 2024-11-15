@@ -7,7 +7,20 @@ const evilShipContainer = document.querySelector('#evil_ship_container')
 const evilShipSprite = document.querySelector('#evil_ship_sprite')
 const score = document.querySelector('#score')
 const shield = document.querySelector('#shield')
-//const time = document.querySelector('#time')
+
+// GLOBAL VARIABELS
+var shieldVar
+var scoreVar
+
+const endGame = () => {
+  console.log('ending game..')
+  if (shieldVar == 0 || scoreVar < 3000) {
+    console.log('game over') 
+  }
+  else {
+    console.log('you win!')
+  }
+}
 
 // EVENT LISTENERS
 window.addEventListener('load', showPage);
@@ -27,8 +40,8 @@ function showPage() {
   function startGame() {
     console.log('starting game..')
     startScreen.style.display = 'none'  
-    let shieldVar = 100
-    let scoreVar = 0
+    shieldVar = 100
+    scoreVar = 0
     score.innerHTML = 'Score:<br>' + scoreVar
     shield.textContent = shieldVar + '%'
     evilShipContainer.classList.add('fly' + random(2), 'pos' + random(6))
@@ -75,7 +88,12 @@ function showPage() {
       score.innerHTML = 'Score:<br>' + scoreVar
       shieldVar -= 25
       shield.textContent = shieldVar + '%'
-      evilReset()
+      if (shieldVar == 0) {
+        endGame() 
+      }
+      else {
+        evilReset()
+      }  
     }
 
     // EVIL RESET
@@ -86,5 +104,10 @@ function showPage() {
       evilShipContainer.classList.add('fly' + random(2), 'pos' + random(6))
       evilShipContainer.addEventListener('mousedown', clickEvilHandler)
     }
+
+    // END GAME
+    //const endGame = () => {
+      //console.log('ending game..')
+   // }
 }
   }
