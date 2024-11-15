@@ -28,6 +28,7 @@ const endGame = () => {
   goodShipContainer.removeAttribute('class')
   goodShipSprite.removeAttribute('class')
   goodShipSprite.style.display = 'none'
+  time.style.display = 'none'
   if (shieldVar == 0 || scoreVar < 1000) {
     console.log('game over') 
     gameOver.style.display = 'grid'
