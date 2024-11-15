@@ -42,21 +42,21 @@ a {
 h1 {
   color: orange;
   font-family: Nasa;
-  font-size: 7rem;
-  margin-left: 28%;
-  top: 20%;
-  position: absolute;
-  text-align: center;
+  font-size: 9cqw;
+  /* margin-left: 28%; */
+  /* top: 20%; */
+  /* position: absolute; */
+  /* text-align: center; */
 }
 
 h3 {
   color: orange;
   font-family: Pixel;
-  font-size: 5rem;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  margin-left: 38%;
+  font-size: 5cqw;
+  /* text-align: center; */
+  /* position: absolute; */
+  /* top: 50%; */
+  /* margin-left: 38%; */
   cursor: pointer;
 }
 
@@ -68,6 +68,10 @@ h3:hover {
   width: 100%;
   aspect-ratio: 16/9;
   position: relative;
+}
+
+#screen div {
+  text-align: center;
 }
 
 #game {
@@ -85,6 +89,7 @@ h3:hover {
   top: 0;
   left: 0;
   display: none;
+  place-items: center;
   background-image: url('../img/start.svg');
 }
 
@@ -95,7 +100,8 @@ h3:hover {
   top: 0;
   left: 0;
   display: none;
-  background-image: url('../img/game_over.svg');
+  place-items: center;
+  /* background-image: url('../img/game_over.svg'); */
 }
 
 #level_complete {
@@ -105,7 +111,8 @@ h3:hover {
   top: 0;
   left: 0;
   display: none;
-  background-image: url('../img/level_complete.svg');
+  place-items: center;
+  /* background-image: url('../img/level_complete.svg'); */
 }
 
 #game_background {
@@ -181,7 +188,7 @@ h3:hover {
 
 #shield {
   font-family: Orbitron;
-  font-size: 2rem;
+  font-size: 2cqw;
   color: orange;
   position: absolute;
   left: 50%;
@@ -193,7 +200,7 @@ h3:hover {
   position: absolute;
   color: orange;
   font-family: Orbitron;
-  font-size: 1.75rem;
+  font-size: 2cqw;
   text-align: center;
 }
 
@@ -203,7 +210,7 @@ h3:hover {
   position: absolute;
   color: orange;
   font-family: Orbitron;
-  font-size: 2rem;
+  font-size: 2cqw;
 }
 
 .pos0 {
