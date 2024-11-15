@@ -7,7 +7,7 @@ const evilShipContainer = document.querySelector('#evil_ship_container')
 const evilShipSprite = document.querySelector('#evil_ship_sprite')
 const score = document.querySelector('#score')
 const shield = document.querySelector('#shield')
-const time = document.querySelector('#time')
+//const time = document.querySelector('#time')
 
 // EVENT LISTENERS
 window.addEventListener('load', showPage);
@@ -22,15 +22,13 @@ function showPage() {
   console.log('Show Page')
   startScreen.style.display = 'block'
   startButton.addEventListener('click', startGame)
-  
+
   // GAME STARTED
   function startGame() {
     console.log('starting game..')
     startScreen.style.display = 'none'  
     let shieldVar = 100
     let scoreVar = 0
-    let timeVar = 60
-    time.textContent = 'ETA: ' + timeVar
     score.innerHTML = 'Score:<br>' + scoreVar
     shield.textContent = shieldVar + '%'
     evilShipContainer.classList.add('fly' + random(2), 'pos' + random(6))
