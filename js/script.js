@@ -13,6 +13,9 @@ const evilShipSprite1 = document.querySelector('#evil_ship1_sprite')
 const evilShipSprite2 = document.querySelector('#evil_ship2_sprite')
 const score = document.querySelector('#score')
 const shield = document.querySelector('#shield')
+const soundShoot = document.querySelector('#sound_shoot')
+const soundBG = document.querySelector('#sound_bg')
+const soundBad = document.querySelector('#sound_bad')
 
 // GLOBAL VARIABELS
 var shieldVar
@@ -23,6 +26,7 @@ var targetVar
 //// END GAME FUNCTION
 const endGame = () => {
   console.log('ending game..')
+  soundBG.pause()
   evilShipContainer1.removeEventListener('mousedown', clickEvilHandler)
   evilShipContainer1.removeEventListener('animationiteration', evilEvade)
   evilShipContainer1.removeAttribute('class')
@@ -54,6 +58,8 @@ const endGame = () => {
 //// CLICK EVIL SHIP FUNCTION
 const clickEvilHandler = () => {
   console.log('click evil')
+  soundShoot.currentTime = 0
+  soundShoot.play()
   targetVar = event.currentTarget
   console.log(targetVar)
   targetVar.removeEventListener('mousedown', clickEvilHandler)
@@ -96,6 +102,8 @@ const evilEvade = () => {
 //// CLICK METEOR FUNCTION
 const clickGoodHandler = () => {
   console.log('click good') 
+  soundBad.currentTime = 0
+  soundBad.play()
   goodShipContainer.removeEventListener('mousedown', clickGoodHandler)
   goodShipContainer.classList.add('freeze')
   goodShipSprite.classList.add('kill')
@@ -129,6 +137,7 @@ const showPage = () => {
 const startGame = () => {
   console.log('starting game..')
   startScreen.style.display = 'none'  
+  soundBG.play()
   shieldVar = 3
   scoreVar = 0
   score.innerHTML = 'Score:<br>' + scoreVar
