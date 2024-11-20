@@ -43,20 +43,12 @@ h1 {
   color: orange;
   font-family: Nasa;
   font-size: 9cqw;
-  /* margin-left: 28%; */
-  /* top: 20%; */
-  /* position: absolute; */
-  /* text-align: center; */
 }
 
 h3 {
   color: orange;
   font-family: Pixel;
   font-size: 5cqw;
-  /* text-align: center; */
-  /* position: absolute; */
-  /* top: 50%; */
-  /* margin-left: 38%; */
   cursor: pointer;
 }
 
@@ -172,18 +164,36 @@ h3:hover {
   pointer-events: none;
 }
 
-#life_board {
+#shield_icon1_con {
   width: 2%;
   position: absolute;
   top: 89%;
   left: 4%;
 }
 
-#shield_icon {
+#shield_icon2_con {
+  width: 2%;
+  position: absolute;
+  top: 89%;
+  left: 8%;
+}
+
+#shield_icon3_con {
+  width: 2%;
+  position: absolute;
+  top: 89%;
+  left: 12%;
+}
+
+#shield_icon1_sprite, #shield_icon2_sprite, #shield_icon3_sprite {
   aspect-ratio: 112/175;
   background-image: url('../img/shield.svg');
   background-size: cover;
   position: relative;
+}
+
+.hidden {
+  opacity: 0;
 }
 
 #shield {
@@ -200,7 +210,7 @@ h3:hover {
   position: absolute;
   color: orange;
   font-family: Orbitron;
-  font-size: 2cqw;
+  font-size: 1.75cqw;
   text-align: center;
 }
 

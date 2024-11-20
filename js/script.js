@@ -29,7 +29,7 @@ const endGame = () => {
   goodShipSprite.removeAttribute('class')
   goodShipSprite.style.display = 'none'
   time.style.display = 'none'
-  if (shieldVar == 0 || scoreVar < 1000) {
+  if (shieldVar == 0 || scoreVar < 2500) {
     console.log('game over') 
     gameOver.style.display = 'grid'
   }
@@ -63,8 +63,8 @@ const evilReset = () => {
 const evilEvade = () => {
   scoreVar -= 100
   score.innerHTML = 'Score:<br>' + scoreVar
-  shieldVar -= 25
-  shield.textContent = shieldVar + '%'
+  document.querySelector('#shield_icon' + shieldVar + '_sprite').classList.add('hide')
+  shieldVar -= 1
   if (shieldVar == 0) {
     endGame() 
   }
@@ -111,10 +111,9 @@ function showPage() {
   function startGame() {
     console.log('starting game..')
     startScreen.style.display = 'none'  
-    shieldVar = 100
+    shieldVar = 3
     scoreVar = 0
     score.innerHTML = 'Score:<br>' + scoreVar
-    shield.textContent = shieldVar + '%'
     evilShipContainer.classList.add('fly' + random(2), 'pos' + random(6))
     evilShipContainer.addEventListener('mousedown', clickEvilHandler)
     evilShipContainer.addEventListener('animationiteration', evilEvade)
