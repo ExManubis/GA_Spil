@@ -5,24 +5,32 @@ const gameOver = document.querySelector('#game_over')
 const gameWin = document.querySelector('#level_complete') 
 const goodShipContainer = document.querySelector('#good_ship_container')
 const goodShipSprite = document.querySelector('#good_ship_sprite')
-const evilShipContainer = document.querySelector('#evil_ship_container')
-const evilShipSprite = document.querySelector('#evil_ship_sprite')
+const evilShipContainer1 = document.querySelector('#evil_ship1_container')
+const evilShipContainer2 = document.querySelector('#evil_ship2_container')
+const evilShipSprite1 = document.querySelector('#evil_ship1_sprite')
+const evilShipSprite2 = document.querySelector('#evil_ship2_sprite')
 const score = document.querySelector('#score')
 const shield = document.querySelector('#shield')
 
 // GLOBAL VARIABELS
 var shieldVar
 var scoreVar
+var targetVar
 
 // GLOBAL CONSTANTS
 //// END GAME FUNCTION
 const endGame = () => {
   console.log('ending game..')
-  evilShipContainer.removeEventListener('mousedown', clickEvilHandler)
-  evilShipContainer.removeEventListener('animationiteration', evilEvade)
-  evilShipContainer.removeAttribute('class')
-  evilShipSprite.removeAttribute('class')
-  evilShipSprite.style.display = 'none'
+  evilShipContainer1.removeEventListener('mousedown', clickEvilHandler)
+  evilShipContainer1.removeEventListener('animationiteration', evilEvade)
+  evilShipContainer1.removeAttribute('class')
+  evilShipSprite1.removeAttribute('class')
+  evilShipSprite1.style.display = 'none'
+  evilShipContainer2.removeEventListener('mousedown', clickEvilHandler)
+  evilShipContainer2.removeEventListener('animationiteration', evilEvade)
+  evilShipContainer2.removeAttribute('class')
+  evilShipSprite2.removeAttribute('class')
+  evilShipSprite2.style.display = 'none'
   goodShipContainer.removeEventListener('mousedown', clickGoodHandler)
   goodShipContainer.removeEventListener('animationiteration', goodReset)
   goodShipContainer.removeAttribute('class')
@@ -42,34 +50,42 @@ const endGame = () => {
 //// CLICK EVIL SHIP FUNCTION
 const clickEvilHandler = () => {
   console.log('click evil')
-  evilShipContainer.removeEventListener('mousedown', clickEvilHandler)
-  evilShipContainer.classList.add('freeze')
-  evilShipSprite.classList.add('kill')
+  targetVar = event.currentTarget
+  console.log(targetVar)
+  targetVar.removeEventListener('mousedown', clickEvilHandler)
+  targetVar.classList.add('freeze')
+  targetVar.firstElementChild.classList.add('kill')
   scoreVar += 100
   score.innerHTML = 'Score:<br>' + scoreVar
-  evilShipSprite.addEventListener('animationend', evilReset)
+  targetVar.firstElementChild.addEventListener('animationend', evilReset)
+  return targetVar 
 }
 
 //// RESET EVIL FUNCTION
 const evilReset = () => {
-  evilShipContainer.removeAttribute('class')
-  evilShipSprite.classList.remove('kill')
-  evilShipContainer.offsetLeft
-  evilShipContainer.classList.add('fly' + random(2), 'pos' + random(6))
-  evilShipContainer.addEventListener('mousedown', clickEvilHandler)
+  event.target.parentElement.removeAttribute('class')
+  event.target.classList.remove('kill')
+  event.target.parentElement.offsetLeft
+  event.target.parentElement.classList.add('fly' + random(2), 'pos' + random(6))
+  event.target.parentElement.addEventListener('mousedown', clickEvilHandler)
+
 }
 
 //// EVIL EVADE FUNCTION
 const evilEvade = () => {
   scoreVar -= 100
   score.innerHTML = 'Score:<br>' + scoreVar
-  document.querySelector('#shield_icon' + shieldVar + '_sprite').classList.add('hide')
+  document.querySelector('#shield_icon' + shieldVar + '_sprite').classList.add('hidden')
   shieldVar -= 1
   if (shieldVar == 0) {
     endGame() 
   }
   else {
-    evilReset()
+    event.target.removeAttribute('class')
+    event.target.firstElementChild.classList.remove('kill')
+    event.target.offsetLeft
+    event.target.classList.add('fly' + random(2), 'pos' + random(6))
+    event.target.addEventListener('mousedown', clickEvilHandler)
   }  
 }
 
@@ -114,9 +130,12 @@ function showPage() {
     shieldVar = 3
     scoreVar = 0
     score.innerHTML = 'Score:<br>' + scoreVar
-    evilShipContainer.classList.add('fly' + random(2), 'pos' + random(6))
-    evilShipContainer.addEventListener('mousedown', clickEvilHandler)
-    evilShipContainer.addEventListener('animationiteration', evilEvade)
+    evilShipContainer1.classList.add('fly' + random(2), 'pos' + random(6))
+    evilShipContainer1.addEventListener('mousedown', clickEvilHandler)
+    evilShipContainer1.addEventListener('animationiteration', evilEvade)
+    evilShipContainer2.classList.add('fly' + random(2), 'pos' + random(6))
+    evilShipContainer2.addEventListener('mousedown', clickEvilHandler)
+    evilShipContainer2.addEventListener('animationiteration', evilEvade)
     goodShipContainer.classList.add('fly' + random(2), 'pos' + random(6))
     goodShipContainer.addEventListener('mousedown', clickGoodHandler)
     goodShipContainer.addEventListener('animationiteration', goodReset)
