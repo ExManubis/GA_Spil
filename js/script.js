@@ -1,6 +1,8 @@
 // GLOBAL CONSTANTS
 const startScreen = document.getElementById('start')
 const startButton = document.querySelector('#start_button')
+const restartButtonGO = document.querySelector('#restart_button_go')
+const restartButtonGW = document.querySelector('#restart_button_gw')
 const gameOver = document.querySelector('#game_over')
 const gameWin = document.querySelector('#level_complete') 
 const goodShipContainer = document.querySelector('#good_ship_container')
@@ -40,10 +42,12 @@ const endGame = () => {
   if (shieldVar == 0 || scoreVar < 2500) {
     console.log('game over') 
     gameOver.style.display = 'grid'
+    restartButtonGO.addEventListener('click', restartGame)
   }
   else {
     console.log('you win!')
     gameWin.style.display = 'grid'
+    restartButtonGW.addEventListener('click', restartGame)
   }
 }
 
@@ -114,31 +118,35 @@ function random(maxNum) {
   return Math.floor(Math.random() * maxNum)
 }
 
-// EVENT LISTENERS
-window.addEventListener('load', showPage);
- 
-// SHOW PAGE
-function showPage() {
+//// SHOW PAGE
+const showPage = () => {
   console.log('Show Page')
   startScreen.style.display = 'grid'
   startButton.addEventListener('click', startGame)
+}
 
-  // GAME STARTED
-  function startGame() {
-    console.log('starting game..')
-    startScreen.style.display = 'none'  
-    shieldVar = 3
-    scoreVar = 0
-    score.innerHTML = 'Score:<br>' + scoreVar
-    evilShipContainer1.classList.add('fly' + random(2), 'pos' + random(6))
-    evilShipContainer1.addEventListener('mousedown', clickEvilHandler)
-    evilShipContainer1.addEventListener('animationiteration', evilEvade)
-    evilShipContainer2.classList.add('fly' + random(2), 'pos' + random(6))
-    evilShipContainer2.addEventListener('mousedown', clickEvilHandler)
-    evilShipContainer2.addEventListener('animationiteration', evilEvade)
-    goodShipContainer.classList.add('fly' + random(2), 'pos' + random(6))
-    goodShipContainer.addEventListener('mousedown', clickGoodHandler)
-    goodShipContainer.addEventListener('animationiteration', goodReset)
-    
-   }
-  }
+//// GAME STARTED
+const startGame = () => {
+  console.log('starting game..')
+  startScreen.style.display = 'none'  
+  shieldVar = 3
+  scoreVar = 0
+  score.innerHTML = 'Score:<br>' + scoreVar
+  evilShipContainer1.classList.add('fly' + random(2), 'pos' + random(6))
+  evilShipContainer1.addEventListener('mousedown', clickEvilHandler)
+  evilShipContainer1.addEventListener('animationiteration', evilEvade)
+  evilShipContainer2.classList.add('fly' + random(2), 'pos' + random(6))
+  evilShipContainer2.addEventListener('mousedown', clickEvilHandler)
+  evilShipContainer2.addEventListener('animationiteration', evilEvade)
+  goodShipContainer.classList.add('fly' + random(2), 'pos' + random(6))
+  goodShipContainer.addEventListener('mousedown', clickGoodHandler)
+  goodShipContainer.addEventListener('animationiteration', goodReset)  
+}
+
+//// GAME RESTART
+const restartGame = () => {
+  location.replace(location.href)
+}
+
+// EVENT LISTENER
+window.addEventListener('load', showPage)

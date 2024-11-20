@@ -45,6 +45,12 @@ h1 {
   font-size: 9cqw;
 }
 
+h2 {
+  color: orange;
+  font-family: Nasa;
+  font-size: 4cqw;
+}
+
 h3 {
   color: orange;
   font-family: Pixel;
@@ -105,6 +111,11 @@ h3:hover {
   display: none;
   place-items: center;
   /* background-image: url('../img/level_complete.svg'); */
+}
+
+#restart_button {
+  margin-top: 0;
+  top: 0;
 }
 
 #game_background {

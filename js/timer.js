@@ -2,11 +2,12 @@
 const time = document.querySelector('#time')
 
 // GLOBAL VARS
-var timeVar = 60
+var timeVar
 var intervalID
 
 // FUNCTION
 function startTimer() {
+  timeVar = 60
   time.textContent = 'ETA: ' + timeVar
   intervalID = setInterval(() => {
     timeVar -= 1
