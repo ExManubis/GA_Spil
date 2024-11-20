@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'Nasa';
+  src: url(../fonts/Nebula-Regular.woff2)
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url(../fonts/Orbitron-VariableFont.woff2)
+}
+
+@font-face {
+  font-family: 'Pixel';
+  src: url(../fonts/Pixer-Regular.woff2);
+}
+
+body {
+  background-color: #1D1D26;
+  width: 100vw;
+}
+
+main {
+  background-color: #1D1D26;
+  width: 100vw;
+}
+
+.flex_box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box {
+  border: 1px solid #000;
+  border-radius: 20px;
+  width: 25vw;
+  height: auto;
+  margin: 2rem;
+  padding-bottom: 1rem;
+  align-items: center;
+  box-shadow: 2px 3px #000;
+}
+
+img {
+  border-radius: 20px 20px 0px 0px;
+  margin-bottom: 1rem;
+  width: 25vw;
+  height: auto;
+}
+
+h1 {
+  font-family: 'Nasa';
+  font-size: 6rem;
+  color: orange;
+  text-align: center;
+}
+
+h4 {
+  font-family: 'Nasa';
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+p {
+  margin-left: 1rem;
+  font-family: 'Orbitron';
+}
+
+nav a {
+  color: orange;
+  border: none;
+  box-shadow: none;
+  font-size: 2rem;
+  font-family: 'Pixel';
+}
+
+nav a:hover {
+  color: yellow;
+}
+
+a {
+  border: 1px solid #000;
+  border-radius: 20px;
+  box-shadow: 2px 3px #000;
+  transition: 0.50s transform, 0.75s box-shadow;
+  text-decoration: none;
+  color: #F8F8F1;
+  margin: 2rem;
+  width: 25vw;
+  height: auto;
+  padding-bottom: 1rem;
+
+}
+
+a:hover {
+  transform: translateY(5%) translateX(5%);
+  box-shadow: none;
+}
+
+ul {
+  list-style-type: none;
+  display: inline-flex;
+}
