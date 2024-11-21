@@ -23,6 +23,10 @@ main {
   width: 100vw;
 }
 
+header {
+  width: 100vw;
+}
+
 .flex_box {
   display: flex;
   flex-direction: row;
@@ -117,7 +121,7 @@ a {
   transition: 0.50s transform, 0.75s box-shadow;
   text-decoration: none;
   color: #F8F8F1;
-  margin: 2rem;
+  margin: 2cqw;
   width: 25vw;
   height: auto;
   padding-bottom: 1rem;
@@ -148,5 +152,5 @@ ul {
   margin-left: auto;
   margin-right: auto;
   border-radius: 20px;
-  width: 50vw;
+  width: 80vw;
 }
