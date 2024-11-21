@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'Nasa';
-  src: url(../fonts/Nebula-Regular.woff2)
+  src: url('../fonts/Nebula-Regular.woff2')
 }
 
 @font-face {
   font-family: 'Orbitron';
-  src: url(../fonts/Orbitron-VariableFont.woff2)
+  src: url('../fonts/Orbitron-VariableFont.woff2')
 }
 
 @font-face {
   font-family: 'Pixel';
-  src: url(../fonts/Pixer-Regular.woff2);
+  src: url('../fonts/Pixer-Regular.woff2');
 }
 
 body {
