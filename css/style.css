@@ -1,0 +1,318 @@
+/* CSS RESET */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+img {
+width: 100%;
+height: auto;
+display: block;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('../fonts/Orbitron-VariableFont.woff2')
+}
+
+@font-face {
+  font-family: 'Nasa';
+  src: url('../fonts/Nebula-Regular.woff2')
+}
+
+@font-face {
+  font-family: 'Pixel';
+  src: url('../fonts/Pixer-Regular.woff2')
+}
+
+body {
+  background-color: #2A2C39;
+}
+
+main {
+  cursor: url('../img/cursor.png'), auto;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+h1 {
+  color: orange;
+  font-family: Nasa;
+  font-size: 9cqw;
+}
+
+h2 {
+  color: orange;
+  font-family: Nasa;
+  font-size: 4cqw;
+}
+
+h3 {
+  color: orange;
+  font-family: Pixel;
+  font-size: 5cqw;
+  cursor: pointer;
+}
+
+h3:hover {
+  color: yellow;
+}
+
+#screen {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+}
+
+#screen div {
+  text-align: center;
+}
+
+#game {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#start {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  place-items: center;
+  background-image: url('../img/start.svg');
+}
+
+#game_over {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  place-items: center;
+  /* background-image: url('../img/game_over.svg'); */
+}
+
+#level_complete {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  place-items: center;
+  /* background-image: url('../img/level_complete.svg'); */
+}
+
+#restart_button {
+  margin-top: 0;
+  top: 0;
+}
+
+#game_background {
+  background-image: url('../img/game_bg.svg');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#game_foreground {
+  background-image: url('../img/game_fg.svg');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+#evil_ship1_container {
+  width: 15%;
+  aspect-ratio: 16/8;
+  position: absolute;
+  left: 0%;
+}
+
+#evil_ship1_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/good_ship.svg');
+  background-size: cover;
+}
+
+#evil_ship2_container {
+  width: 15%;
+  aspect-ratio: 16/8;
+  position: absolute;
+  left: 0%;
+}
+
+#evil_ship2_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/good_ship.svg');
+  background-size: cover;
+}
+
+#good_ship_container {
+  width: 10%;
+  aspect-ratio: 3/0.94;
+  position: absolute;
+}
+
+#good_ship_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/evil_ship.svg');
+  background-size: cover;
+}
+
+#game_ui {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+#shield_icon1_con {
+  width: 2%;
+  position: absolute;
+  top: 89%;
+  left: 4%;
+}
+
+#shield_icon2_con {
+  width: 2%;
+  position: absolute;
+  top: 89%;
+  left: 8%;
+}
+
+#shield_icon3_con {
+  width: 2%;
+  position: absolute;
+  top: 89%;
+  left: 12%;
+}
+
+#shield_icon1_sprite, #shield_icon2_sprite, #shield_icon3_sprite {
+  aspect-ratio: 112/175;
+  background-image: url('../img/shield.svg');
+  background-size: cover;
+  position: relative;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#shield {
+  font-family: Orbitron;
+  font-size: 2cqw;
+  color: orange;
+  position: absolute;
+  left: 50%;
+}
+
+#score_board {
+  top: 87.5%;
+  left: 60%;
+  position: absolute;
+  color: orange;
+  font-family: Orbitron;
+  font-size: 1.75cqw;
+  text-align: center;
+}
+
+#time_board {
+  top: 90%;
+  left: 84%;
+  position: absolute;
+  color: orange;
+  font-family: Orbitron;
+  font-size: 2cqw;
+}
+
+.pos0 {
+  top: 10%;
+  left: 0;
+}
+
+.pos1 {
+  top: 20%;
+  left: 0;
+}
+
+.pos2 {
+  top: 30%;
+  left: 0;
+}
+
+.pos3 {
+  top: 40%;
+  left: 0;
+}
+
+.pos4 {
+  top: 50%;
+  left: 0;
+}
+
+.pos5 {
+  top: 60%;
+  left: 0;
+}
+
+.fly0 {
+  animation: fly 2s linear infinite;
+  transform: scaleX(-1);
+}
+
+.fly1 {
+  animation: fly 2s linear infinite;
+  animation-direction: reverse;
+  transform: scaleX(1);
+}
+
+.kill {
+  animation: kill 1s linear;
+}
+
+.freeze {
+  animation-play-state: paused;
+}
+
+@keyframes fly {
+  from {
+  translate: -20% 0%;
+}
+  to {
+  translate: 100vw 0%;
+}
+}
+
+@keyframes kill {
+  from {
+  opacity: 1;
+  rotate: 0deg;
+}
+  to {
+  opacity: 0;
+  rotate: 360deg;
+}
+}

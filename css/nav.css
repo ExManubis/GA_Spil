@@ -1,0 +1,17 @@
+ul {
+  list-style-type: none;
+  display: inline-flex;
+}
+
+nav a {
+  color: orange;
+  border: none;
+  box-shadow: none;
+  font-size: 2rem;
+  font-family: 'Pixel';
+  margin: 2rem;
+}
+
+nav a:hover {
+  color: yellow;
+}
