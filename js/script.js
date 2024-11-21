@@ -46,6 +46,8 @@ const endGame = () => {
   if (shieldVar == 0 || scoreVar < 2500) {
     console.log('game over') 
     gameOver.style.display = 'grid'
+    soundBad.currentTime = 0
+    soundBad.play()
     restartButtonGO.addEventListener('click', restartGame)
   }
   else {
@@ -137,6 +139,7 @@ const showPage = () => {
 const startGame = () => {
   console.log('starting game..')
   startScreen.style.display = 'none'  
+  soundBG.currentTime = 1
   soundBG.play()
   shieldVar = 3
   scoreVar = 0
