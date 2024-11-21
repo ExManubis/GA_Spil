@@ -16,6 +16,7 @@ const shield = document.querySelector('#shield')
 const soundShoot = document.querySelector('#sound_shoot')
 const soundBG = document.querySelector('#sound_bg')
 const soundBad = document.querySelector('#sound_bad')
+const soundWin = document.querySelector('#sound_win')
 
 // GLOBAL VARIABELS
 var shieldVar
@@ -53,6 +54,7 @@ const endGame = () => {
   else {
     console.log('you win!')
     gameWin.style.display = 'grid'
+    soundWin.play()
     restartButtonGW.addEventListener('click', restartGame)
   }
 }
