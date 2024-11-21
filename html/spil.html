@@ -1,113 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link href="../css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/nav.css">
-  </head>
-  <body>
 
-    <head>
-      <nav>
-        <ul>
-          <li><a href="../index.html">Forside</a></li>
-          <li><a href="spil.html">Spil</a></li>
-          <li><a href="grafik.html">Grafik</a></li>
-          <li><a href="assets.html">Assets</a></li>
-          <li><a href="teknik.html">Teknik</a></li>
-        </ul>
-      </nav>
-    </head>
-    
-    <main>
-      <div id="screen">
-        <div id="game">
-          <div id="game_background">
-            
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cosmic Defender</title>
+  <link href="../css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/nav.css">
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Forside</a></li>
+        <li><a href="spil.html">Spil</a></li>
+        <li><a href="grafik.html">Grafik</a></li>
+        <li><a href="assets.html">Assets</a></li>
+        <li><a href="teknik.html">Teknik</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div id="screen">
+      <div id="game">
+        <div id="game_background">
+
+        </div>
+        <div id="game_elements">
+          <div id="good_ship_container">
+            <div id="good_ship_sprite">
+
+            </div>
           </div>
-          <div id="game_elements">
-            <div id="good_ship_container">
-              <div id="good_ship_sprite">
-                
-              </div>
-            </div>
 
-            <div id="evil_ship1_container">
-              <div id="evil_ship1_sprite">
-                
-              </div>
-            </div>
+          <div id="evil_ship1_container">
+            <div id="evil_ship1_sprite">
 
-             <div id="evil_ship2_container">
-              <div id="evil_ship2_sprite">
-                
-              </div>
             </div>
+          </div>
+
+          <div id="evil_ship2_container">
+            <div id="evil_ship2_sprite">
+
+            </div>
+          </div>
+
+        </div>
+        <div id="game_foreground">
+          <div id="cockpit">
 
           </div>
-          <div id="game_foreground">
-           <div id="cockpit">
-              
-            </div> 
-          </div>
-          <div id="game_ui">
-            <div id="score_board">
-             <div id="score">
-                
-              </div> 
+        </div>
+        <div id="game_ui">
+          <div id="score_board">
+            <div id="score">
+
             </div>
-            <div id="shield_icon1_con">
-              <div id="shield_icon1_sprite">
-                    
-              </div>
-              </div>
-               <div id="shield_icon2_con">
-                  
-              <div id="shield_icon2_sprite">
-                
-              </div>
-              </div>
-            <div id="shield_icon3_con">
-              
-              <div id="shield_icon3_sprite">
-                
-              </div>
-              </div>
-                  
-            <div id="time_board">
-              <div id="time">
-                
-              </div>
+          </div>
+          <div id="shield_icon1_con">
+            <div id="shield_icon1_sprite">
+
+            </div>
+          </div>
+          <div id="shield_icon2_con">
+
+            <div id="shield_icon2_sprite">
+
+            </div>
+          </div>
+          <div id="shield_icon3_con">
+
+            <div id="shield_icon3_sprite">
+
+            </div>
+          </div>
+
+          <div id="time_board">
+            <div id="time">
+
             </div>
           </div>
         </div>
+      </div>
 
-        <div id="start">
-          <div>
-            <h1>Cosmic <br> Defender</h1>
-            <h2>Shoot the meteors!</h2>
-            <h3 id="start_button">Start Game</h3> 
-          </div>
+      <div id="start">
+        <div>
+          <h1>Cosmic <br> Defender</h1>
+          <h2>Shoot the meteors!</h2>
+          <h3 id="start_button">Start Game</h3>
         </div>
-        <div id="game_over">
-          <div>
-            <h1>Game <br> Over</h1> 
-            <h3 id='restart_button_go'>Restart Game</h3> 
-          </div>
+      </div>
+      <div id="game_over">
+        <div>
+          <h1>Game <br> Over</h1>
+          <h3 id='restart_button_go'>Restart Game</h3>
         </div>
-        <div id="level_complete">
-          <div>
-            <h1>You win!</h1> 
-            <h3 id='restart_button_gw'>Restart Game</h3>
-          </div>
+      </div>
+      <div id="level_complete">
+        <div>
+          <h1>You win!</h1>
+          <h3 id='restart_button_gw'>Restart Game</h3>
         </div>
-    </main>
-    <audio src='../audio/Shoot.m4a' id='sound_shoot'></audio>
-    <audio src='../audio/bgs.m4a' id='sound_bg'></audio>
-    <audio src='../audio/bad.m4a' id='sound_bad'></audio>
-    <script src='../js/script.js'></script>
-    <script src='../js/timer.js'></script>
-  </body>
+      </div>
+    </div>
+  </main>
+  <audio src='../audio/Shoot.m4a' id='sound_shoot'></audio>
+  <audio src='../audio/bgs.m4a' id='sound_bg'></audio>
+  <audio src='../audio/bad.m4a' id='sound_bad'></audio>
+  <script src='../js/script.js'></script>
+  <script src='../js/timer.js'></script>
+</body>
+
 </html>
