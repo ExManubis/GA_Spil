@@ -279,12 +279,12 @@ h3:hover {
 }
 
 .fly0 {
-  animation: fly 1.5s linear infinite;
+  animation: fly 2s linear infinite;
   transform: scaleX(-1);
 }
 
 .fly1 {
-  animation: fly 1.5s linear infinite;
+  animation: fly 2s linear infinite;
   animation-direction: reverse;
   transform: scaleX(1);
 }
